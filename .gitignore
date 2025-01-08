@@ -1,106 +1,36 @@
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### Ignorar todos los directorios de compilación (incluyendo subdirectorios de proyectos hijo) ###
-build/
+# Ignorar directorios de compilación
 **/build/
-**/out/
-**/target/
+**/.gradle/
 
-### Ignorar todos los archivos de compilación ###
+# Ignorar archivos de configuración de Android Studio
+**/.idea/
+**/.vscode/
+**/*.iml
+
+# Ignorar archivos de configuración de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos de compilación de Java
 *.class
-*.war
-*.ear
 
-### Ignorar .gradle directory (también sen subdirectorios) ###
-.gradle
-**/.gradle
+# Ignorar archivos de configuración de Gradle
+gradle-app.setting
+gradle-wrapper.jar
+gradle-wrapper.properties
+gradlew
+gradlew.bat
 
-### Ignorar: *.iml
-             #.gradle
-             #/local.properties
-             #/.idea/caches
-             #/.idea/libraries
-             #/.idea/modules.xml
-             #/.idea/workspace.xml
-             #/.idea/navEditor.xml
-             #/.idea/assetWizardSettings.xml
-             #.DS_Store
-             #/build
-             #/captures
-             #.externalNativeBuild
-             #.cxx
-             #local.properties
-                # en subdirectorios ###
+# Ignorar archivos de configuración de Maven
+**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
 
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-
-
-
-*.iml
-**/.gradle
-**/local.properties
-**/.idea/caches
-**/.idea/libraries
-**/.idea/modules.xml
-**/.idea/workspace.xml
-**/.idea/navEditor.xml
-**/.idea/assetWizardSettings.xml
-**/.DS_Store
-**/build
-**/captures
-**/.externalNativeBuild
-**/.cxx
-**/local.properties
-
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
-
-### Mac OS ###
-.DS_Store
+# Ignorar archivos de configuración de Kotlin
+**/out/
