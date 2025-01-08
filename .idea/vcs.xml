@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/02. Introducción a Android/DadoSuzuki" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/03. Layouts y navegación en Android/IndiceMasaCorporal" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/04. Actividades y ciclo de vida/CuestionarioCicloDeVida" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/04. Actividades y ciclo de vida/CuestionarioStartActivity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/04. Actividades y ciclo de vida/CuestionarioViewModel" vcs="Git" />
+  </component>
+</project>
