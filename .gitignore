@@ -1,8 +1,56 @@
-.gradle
-build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+
+### Ignorar todos los directorios de compilación (incluyendo subdirectorios de proyectos hijo) ###
+build/
+**/build/
+**/out/
+**/target/
+
+### Ignorar todos los archivos de compilación ###
+*.class
+*.war
+*.ear
+
+### Ignorar .gradle directory (también sen subdirectorios) ###
+.gradle
+**/.gradle
+
+### Ignorar: *.iml
+             #.gradle
+             #/local.properties
+             #/.idea/caches
+             #/.idea/libraries
+             #/.idea/modules.xml
+             #/.idea/workspace.xml
+             #/.idea/navEditor.xml
+             #/.idea/assetWizardSettings.xml
+             #.DS_Store
+             #/build
+             #/captures
+             #.externalNativeBuild
+             #.cxx
+             #local.properties
+                # en subdirectorios ###
+
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+
 
 *.iml
 **/.gradle
