@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:background="@color/design_default_color_background">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCalculadora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/merienda_variable"
+            android:text="@string/calculadora"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutTipoCafe"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/tipoCafe"
+            app:layout_constraintStart_toEndOf="@id/ivGranoCafe"
+            app:layout_constraintTop_toBottomOf="@id/tvCalculadora">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTipoCafe"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivGranoCafe"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/layoutTipoCafe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layoutTipoCafe"
+            app:srcCompat="@drawable/ic_grano" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutTazas"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/numeroTazas"
+            app:layout_constraintStart_toEndOf="@id/ivCoffeeCup"
+            app:layout_constraintTop_toBottomOf="@id/layoutTipoCafe">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTazas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="@string/valor_inicial_tazas"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivCoffeeCup"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/layoutTazas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layoutTazas"
+            app:srcCompat="@drawable/ic_coffee_cup" />
+
+
+
+
+        <ImageView
+            android:id="@+id/ivAdulto"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/swSexo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/swSexo"
+            app:srcCompat="@drawable/ic_sexo" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swSexo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:checked="true"
+            android:fontFamily="@font/merienda_variable"
+            android:text="@string/sexo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/layoutTazas"
+            app:layout_constraintTop_toBottomOf="@id/layoutTazas" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btCalcular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/merienda_variable"
+            android:text="@string/calcular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/swSexo"
+            app:layout_constraintTop_toBottomOf="@id/swSexo" />
+
+            <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCalorias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:inputType="numberDecimal"
+            android:textSize="18sp"
+            android:enabled="false"
+            app:layout_constraintStart_toStartOf="@id/btCalcular"
+            app:layout_constraintTop_toBottomOf="@+id/btCalcular" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPorcentaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:inputType="numberDecimal"
+            android:textSize="18sp"
+            android:enabled="false"
+            app:layout_constraintStart_toStartOf="@id/etCalorias"
+            app:layout_constraintTop_toBottomOf="@+id/etCalorias"
+             />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

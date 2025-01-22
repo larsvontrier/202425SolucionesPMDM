@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/lyBotones"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btOtro"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_marginEnd="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sodo_sans"
+            android:text="@string/quiero_otro" />
+        <Button
+            android:id="@+id/btCategorias"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_marginEnd="2sp"
+            android:layout_marginStart="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sodo_sans"
+            android:text="@string/categorias" />
+
+        <Button
+            android:id="@+id/btCalcular"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_marginStart="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sodo_sans"
+            android:enabled="false"
+            android:text="@string/calculadora" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyBotones"
+        android:fontFamily="@font/sodo_sans"
+        tools:text="Starbucks® Christmas Blonde Roast Clover Vertica" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imCafe"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/imaxe_do_cafe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre"
+        app:shapeAppearanceOverlay="@style/EsquinasRedondeadas"
+        tools:srcCompat="@drawable/coffee" />
+
+
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imCafe"
+        app:layout_constraintTop_toBottomOf="@id/imCafe"
+        android:fontFamily="@font/sodo_sans"
+        android:justificationMode="inter_word"
+        tools:text="Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance." />
+
+    <TextView
+        android:id="@+id/tvTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        tools:text="Hot Coffees"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        android:fontFamily="@font/sodo_sans"
+        app:layout_constraintStart_toEndOf="@id/imCafe"
+        app:layout_constraintTop_toTopOf="@id/imCafe" />
+
+    <TextView
+        android:id="@+id/tvCalorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        tools:text="100 calorias"
+        android:fontFamily="@font/sodo_sans"
+        app:layout_constraintStart_toStartOf="@id/tvTipo"
+        app:layout_constraintTop_toBottomOf="@id/tvTipo" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
