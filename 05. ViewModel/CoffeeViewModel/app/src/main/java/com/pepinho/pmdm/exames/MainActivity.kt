@@ -60,7 +60,8 @@ class MainActivity : AppCompatActivity() {
          * que emite el ViewModel y actualiza la interfaz de usuario.
          */
         lifecycleScope.launch {
-            cafeViewModel.cafeConCategoria.collect { value -> updateUI(value)
+            cafeViewModel.cafeConCategoria.collect {
+                value -> updateUI(value)
             }
         }
 
