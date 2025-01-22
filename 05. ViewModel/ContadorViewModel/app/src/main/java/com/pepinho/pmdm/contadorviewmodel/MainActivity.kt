@@ -40,6 +40,12 @@ class MainActivity : AppCompatActivity() {
             viewModel.decrementar()
         }
 
+        /**
+         * Observamos el valor del contador y lo mostramos en el TextView
+         * collect es un método de la librería kotlinx.coroutines.flow que
+         * nos permite observar un flujo de datos. Recoge el valor del flujo
+         * y lo muestra en el TextView
+         */
         lifecycleScope.launch {
             viewModel.valor.collect { numero ->
                 binding.tvNumero.text = numero.toString()
