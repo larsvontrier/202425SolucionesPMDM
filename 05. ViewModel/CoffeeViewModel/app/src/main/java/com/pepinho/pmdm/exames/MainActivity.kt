@@ -45,8 +45,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
         binding.btOtro.setOnClickListener {
             cafeViewModel.getCoffeConCategoria()
         }
@@ -56,6 +54,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        /**
+         * lifecycleScope es un scope que se encarga de lanzar corutinas que se cancelan cuando la actividad
+         * es destruida. En este caso, lanzamos una corutina que se encarga de recoger el flujo de datos
+         * que emite el ViewModel y actualiza la interfaz de usuario.
+         */
         lifecycleScope.launch {
             cafeViewModel.cafeConCategoria.collect { value -> updateUI(value)
             }
