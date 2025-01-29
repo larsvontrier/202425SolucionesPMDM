@@ -1,0 +1,273 @@
+{
+  "Equipo": [
+    {
+      "abreviatura" : "ATL",
+      "idEquipo" : 1,
+      "ciudad" : "Atlanta",
+      "conferencia" : "EAST",
+      "division" : "SOUTHEAST",
+      "nombre" : "Hawks",
+      "nombreCompleto" : "Atlanta Hawks"
+    },
+    {
+      "abreviatura" : "BOS",
+      "idEquipo" : 2,
+      "ciudad" : "Boston",
+      "conferencia" : "EAST",
+      "division" : "ATLANTIC",
+      "nombre" : "Celtics",
+      "nombreCompleto" : "Boston Celtics"
+    },
+    {
+      "abreviatura" : "BKN",
+      "idEquipo" : 3,
+      "ciudad" : "Brooklyn",
+      "conferencia" : "EAST",
+      "division" : "ATLANTIC",
+      "nombre" : "Nets",
+      "nombreCompleto" : "Brooklyn Nets"
+    },
+    {
+      "abreviatura" : "CHA",
+      "idEquipo" : 4,
+      "ciudad" : "Charlotte",
+      "conferencia" : "EAST",
+      "division" : "SOUTHEAST",
+      "nombre" : "Hornets",
+      "nombreCompleto" : "Charlotte Hornets"
+    },
+    {
+      "abreviatura" : "CHI",
+      "idEquipo" : 5,
+      "ciudad" : "Chicago",
+      "conferencia" : "EAST",
+      "division" : "CENTRAL",
+      "nombre" : "Bulls",
+      "nombreCompleto" : "Chicago Bulls"
+    },
+    {
+      "abreviatura" : "CLE",
+      "idEquipo" : 6,
+      "ciudad" : "Cleveland",
+      "conferencia" : "EAST",
+      "division" : "CENTRAL",
+      "nombre" : "Cavaliers",
+      "nombreCompleto" : "Cleveland Cavaliers"
+    },
+    {
+      "abreviatura" : "DAL",
+      "idEquipo" : 7,
+      "ciudad" : "Dallas",
+      "conferencia" : "WEST",
+      "division" : "SOUTHWEST",
+      "nombre" : "Mavericks",
+      "nombreCompleto" : "Dallas Mavericks"
+    },
+    {
+      "abreviatura" : "DEN",
+      "idEquipo" : 8,
+      "ciudad" : "Denver",
+      "conferencia" : "WEST",
+      "division" : "NORTHWEST",
+      "nombre" : "Nuggets",
+      "nombreCompleto" : "Denver Nuggets"
+    },
+    {
+      "abreviatura" : "DET",
+      "idEquipo" : 9,
+      "ciudad" : "Detroit",
+      "conferencia" : "EAST",
+      "division" : "CENTRAL",
+      "nombre" : "Pistons",
+      "nombreCompleto" : "Detroit Pistons"
+    },
+    {
+      "abreviatura" : "GSW",
+      "idEquipo" : 10,
+      "ciudad" : "Golden State",
+      "conferencia" : "WEST",
+      "division" : "PACIFIC",
+      "nombre" : "Warriors",
+      "nombreCompleto" : "Golden State Warriors"
+    },
+    {
+      "abreviatura" : "HOU",
+      "idEquipo" : 11,
+      "ciudad" : "Houston",
+      "conferencia" : "WEST",
+      "division" : "SOUTHWEST",
+      "nombre" : "Rockets",
+      "nombreCompleto" : "Houston Rockets"
+    },
+    {
+      "abreviatura" : "IND",
+      "idEquipo" : 12,
+      "ciudad" : "Indiana",
+      "conferencia" : "EAST",
+      "division" : "CENTRAL",
+      "nombre" : "Pacers",
+      "nombreCompleto" : "Indiana Pacers"
+    },
+    {
+      "abreviatura" : "LAC",
+      "idEquipo" : 13,
+      "ciudad" : "LA",
+      "conferencia" : "WEST",
+      "division" : "PACIFIC",
+      "nombre" : "Clippers",
+      "nombreCompleto" : "LA Clippers"
+    },
+    {
+      "abreviatura" : "LAL",
+      "idEquipo" : 14,
+      "ciudad" : "Los Angeles",
+      "conferencia" : "WEST",
+      "division" : "PACIFIC",
+      "nombre" : "Lakers",
+      "nombreCompleto" : "Los Angeles Lakers"
+    },
+    {
+      "abreviatura" : "MEM",
+      "idEquipo" : 15,
+      "ciudad" : "Memphis",
+      "conferencia" : "WEST",
+      "division" : "SOUTHWEST",
+      "nombre" : "Grizzlies",
+      "nombreCompleto" : "Memphis Grizzlies"
+    },
+    {
+      "abreviatura" : "MIA",
+      "idEquipo" : 16,
+      "ciudad" : "Miami",
+      "conferencia" : "EAST",
+      "division" : "SOUTHEAST",
+      "nombre" : "Heat",
+      "nombreCompleto" : "Miami Heat"
+    },
+    {
+      "abreviatura" : "MIL",
+      "idEquipo" : 17,
+      "ciudad" : "Milwaukee",
+      "conferencia" : "EAST",
+      "division" : "CENTRAL",
+      "nombre" : "Bucks",
+      "nombreCompleto" : "Milwaukee Bucks"
+    },
+    {
+      "abreviatura" : "MIN",
+      "idEquipo" : 18,
+      "ciudad" : "Minnesota",
+      "conferencia" : "WEST",
+      "division" : "NORTHWEST",
+      "nombre" : "Timberwolves",
+      "nombreCompleto" : "Minnesota Timberwolves"
+    },
+    {
+      "abreviatura" : "NOP",
+      "idEquipo" : 19,
+      "ciudad" : "New Orleans",
+      "conferencia" : "WEST",
+      "division" : "SOUTHWEST",
+      "nombre" : "Pelicans",
+      "nombreCompleto" : "New Orleans Pelicans"
+    },
+    {
+      "abreviatura" : "NYK",
+      "idEquipo" : 20,
+      "ciudad" : "New York",
+      "conferencia" : "EAST",
+      "division" : "ATLANTIC",
+      "nombre" : "Knicks",
+      "nombreCompleto" : "New York Knicks"
+    },
+    {
+      "abreviatura" : "OKC",
+      "idEquipo" : 21,
+      "ciudad" : "Oklahoma City",
+      "conferencia" : "WEST",
+      "division" : "NORTHWEST",
+      "nombre" : "Thunder",
+      "nombreCompleto" : "Oklahoma City Thunder"
+    },
+    {
+      "abreviatura" : "ORL",
+      "idEquipo" : 22,
+      "ciudad" : "Orlando",
+      "conferencia" : "EAST",
+      "division" : "SOUTHEAST",
+      "nombre" : "Magic",
+      "nombreCompleto" : "Orlando Magic"
+    },
+    {
+      "abreviatura" : "PHI",
+      "idEquipo" : 23,
+      "ciudad" : "Philadelphia",
+      "conferencia" : "EAST",
+      "division" : "ATLANTIC",
+      "nombre" : "76ers",
+      "nombreCompleto" : "Philadelphia 76ers"
+    },
+    {
+      "abreviatura" : "PHX",
+      "idEquipo" : 24,
+      "ciudad" : "Phoenix",
+      "conferencia" : "WEST",
+      "division" : "PACIFIC",
+      "nombre" : "Suns",
+      "nombreCompleto" : "Phoenix Suns"
+    },
+    {
+      "abreviatura" : "POR",
+      "idEquipo" : 25,
+      "ciudad" : "Portland",
+      "conferencia" : "WEST",
+      "division" : "NORTHWEST",
+      "nombre" : "Trail Blazers",
+      "nombreCompleto" : "Portland Trail Blazers"
+    },
+    {
+      "abreviatura" : "SAC",
+      "idEquipo" : 26,
+      "ciudad" : "Sacramento",
+      "conferencia" : "WEST",
+      "division" : "PACIFIC",
+      "nombre" : "Kings",
+      "nombreCompleto" : "Sacramento Kings"
+    },
+    {
+      "abreviatura" : "SAS",
+      "idEquipo" : 27,
+      "ciudad" : "San Antonio",
+      "conferencia" : "WEST",
+      "division" : "SOUTHWEST",
+      "nombre" : "Spurs",
+      "nombreCompleto" : "San Antonio Spurs"
+    },
+    {
+      "abreviatura" : "TOR",
+      "idEquipo" : 28,
+      "ciudad" : "Toronto",
+      "conferencia" : "EAST",
+      "division" : "ATLANTIC",
+      "nombre" : "Raptors",
+      "nombreCompleto" : "Toronto Raptors"
+    },
+    {
+      "abreviatura" : "UTA",
+      "idEquipo" : 29,
+      "ciudad" : "Utah",
+      "conferencia" : "WEST",
+      "division" : "NORTHWEST",
+      "nombre" : "Jazz",
+      "nombreCompleto" : "Utah Jazz"
+    },
+    {
+      "abreviatura" : "WAS",
+      "idEquipo" : 30,
+      "ciudad" : "Washington",
+      "conferencia" : "EAST",
+      "division" : "SOUTHEAST",
+      "nombre" : "Wizards",
+      "nombreCompleto" : "Washington Wizards"
+    }
+  ]}
