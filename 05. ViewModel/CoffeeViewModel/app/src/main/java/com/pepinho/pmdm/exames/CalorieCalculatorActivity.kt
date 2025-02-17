@@ -64,6 +64,7 @@ class CalorieCalculatorActivity : AppCompatActivity() {
             binding.etTazas.text.toString().toIntOrNull() ?: 0, calorias, binding.swSexo.isChecked
         )
     }
+}
 
 //    private fun calcularCalorias() {
 //        binding.etTazas.text.toString().toIntOrNull()?.let {
@@ -81,4 +82,4 @@ class CalorieCalculatorActivity : AppCompatActivity() {
 //
 //        }
 //    }
-}
+//}
