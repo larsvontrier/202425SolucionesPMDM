@@ -60,6 +60,7 @@ dependencies {
     // Gson
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation(libs.gson)
+    implementation(libs.androidx.fragment)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
