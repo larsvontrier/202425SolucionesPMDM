@@ -1,47 +1,30 @@
 package com.pepinho.nba
 
-import android.util.Log
-import androidx.core.content.ContentProviderCompat
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.pepinho.nba.model.Equipo
-import com.pepinho.nba.model.repositorios.EquipoJsonRepository
 import com.pepinho.nba.model.repositorios.EquipoRepository
-import com.pepinho.nba.retrofit.ClienteRetrofit
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 
-class EquiposViewModel(private val repositorio: EquipoRepository) : ViewModel() {
-    private val _equipos = MutableStateFlow<List<Equipo>>(emptyList())
-//    private val _equipos = repositorio.equipos.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
-    val equipos: StateFlow<List<Equipo>> get() = _equipos
+class EquiposViewModelStateIn(private val repositorio: EquipoRepository) : ViewModel() {
 
-    private val _loadingState = MutableStateFlow<Boolean>(false)
-    val loadingState: StateFlow<Boolean> get() = _loadingState
+    // Convierte el Flow del repositorio en un StateFlow
+    val equipos: StateFlow<List<Equipo>> = repositorio.equipos
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.Lazily, // Inicia solo cuando hay observadores
+            initialValue = emptyList()
+        )
 
-    init {
-        getEquipos()
-    }
-
-    fun getEquipos() {
-        viewModelScope.launch {
-            _loadingState.value = true
-            try {
-                // Los cambios en el repositorio de equipos se reflejarán en _equipos
-                repositorio.equipos.collect { lista ->
-                    _equipos.value = lista
-                }
-            } catch (e: Exception) {
-                Log.e("EquiposViewModel", "${e.message}")
-            } finally {
-                _loadingState.value = false
-            }
-        }
-    }
-
-
+    // Estado de carga basado en si la lista está vacía
+    val loadingState: StateFlow<Boolean> = equipos
+        .map { it.isEmpty() }
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.Lazily,
+            initialValue = true
+        )
 }

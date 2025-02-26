@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NBA Data RecyclerView</string>
+    <string name="txtHintNombre">Introduce el nombre del equipo</string>
+    <string name="tvNombreEquipo">Nombre equipo</string>
+    <string name="tvDetalles">Detalles</string>
+    <string name="txtCbFavorito">Favorito</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="txt_nombre_equipo">Nombre</string>
+    <string name="txt_nombre_ciudad">Ciudad</string>
+    <string name="txtFavorito">Favorito</string>
+    <string name="jugadores">Jugadores</string>
+    <string name="resultados">Resultados</string>
+    <string name="txt_icono_del_equipo">Icono del equipo</string>
+</resources>

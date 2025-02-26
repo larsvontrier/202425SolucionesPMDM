@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pepinho.nba.databinding.ItemEquipoBinding
 import com.pepinho.nba.model.Equipo
 
-class EquiposAdapter2(
+class EquiposListAdapter(
     private val onItemClickListener: (Equipo) -> Unit
-) : ListAdapter<Equipo, EquiposAdapter2.EquipoHolder2>(EquipoDiffCallback) {
+) : ListAdapter<Equipo, EquiposListAdapter.EquipoViewHolder>(EquipoDiffCallback) {
 
-    class EquipoHolder2(
+    class EquipoViewHolder(
         private val binding: ItemEquipoBinding,
         private val onItemClickListener: (Equipo) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -47,15 +47,23 @@ class EquiposAdapter2(
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipoHolder2 {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipoViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemEquipoBinding.inflate(inflater, parent, false)
-        return EquipoHolder2(binding, onItemClickListener)
+        return EquipoViewHolder(binding, onItemClickListener)
     }
 
-    override fun onBindViewHolder(holder: EquipoHolder2, position: Int) {
+    override fun onBindViewHolder(holder: EquipoViewHolder, position: Int) {
+        // getItem(position) es un método de ListAdapter. Como ya no recogemos la lista completa.
+        // getItem(position) nos devuelve el objeto Equipo en la posición indicada.
         val equipo = getItem(position)
         holder.bind(equipo)
+    }
+
+    override fun onCurrentListChanged(previousList: MutableList<Equipo>, currentList: MutableList<Equipo>) {
+        super.onCurrentListChanged(previousList, currentList)
+        // Aquí puedes añadir lógica adicional si es necesario
+//        currentList.sortBy { it.nombre } // Sólo si la lista es mutable.
     }
 
 }
