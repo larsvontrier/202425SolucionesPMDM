@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ClienteRetrofit {
     private const val BASE_URL = "https://api.balldontlie.io/v1/"
-    private const val API_KEY = "7ff6967d-dae3-4b4c-a716-b0c773b511e1"
+    private const val API_KEY = "TU CLAVE DEL API"
 
     val apiEquipo: EquipoAPI by lazy {
         val gson = GsonBuilder().setPrettyPrinting().
