@@ -39,14 +39,14 @@ class EquipoJsonRepository private constructor(context: Context) : EquipoReposit
             BufferedReader(InputStreamReader(context.assets.open("equipos.json"))).use { reader ->
                 val equiposList = gson.fromJson<List<Equipo>>(reader, tipo)
 
-                // añado elemento a elemento a la lista de equipos:
+//                // añado elemento a elemento a la lista de equipos:
+//
+//                equiposList?.forEach {
+//                    _equipos.value = _equipos.value + it
+//                    delay(500)
+//                }
 
-                equiposList?.forEach {
-                    _equipos.value = _equipos.value + it
-                    delay(100)
-                }
-
-//                _equipos.value = equiposList ?: emptyList()
+                _equipos.value = equiposList ?: emptyList()
             }
         } catch (e: Exception) {
             Log.e("EquipoJsonRepository", "Error al cargar los equipos de JSON: ${e.message}")

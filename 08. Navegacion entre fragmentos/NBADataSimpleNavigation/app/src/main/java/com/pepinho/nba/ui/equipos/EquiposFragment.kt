@@ -1,24 +1,21 @@
-package com.pepinho.nba
+package com.pepinho.nba.ui.equipos
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pepinho.nba.ui.EquipoViewModelFactory
 import com.pepinho.nba.application.NBADataApplication
 import com.pepinho.nba.databinding.FragmentEquiposBinding
-import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator
-import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 import kotlinx.coroutines.launch
-
 
 private const val TAG = "EquiposFragment"
 
@@ -58,10 +55,16 @@ class EquiposFragment : Fragment() {
 //        binding.rvEquipos.itemAnimator = DefaultItemAnimator() // Animaciones por defecto
         // Animación personalizada:
 //        binding.rvEquipos.itemAnimator = SlideInUpAnimator()
-        binding.rvEquipos.itemAnimator = SlideInLeftAnimator()
 
-        binding.rvEquipos.adapter = EquiposListAdapter { equipo ->
-            Toast.makeText(requireContext(), "${equipo.nombre} ¡clic!", Toast.LENGTH_SHORT).show()
+//        binding.rvEquipos.adapter = EquiposListAdapter { equipo ->
+//            Toast.makeText(requireContext(), "${equipo.nombre} ¡clic!", Toast.LENGTH_SHORT).show()
+//        }
+
+        binding.rvEquipos.adapter = EquiposAdapter(emptyList()) {
+//            findNavController().navigate(R.id.show_detalle_equipo)
+                idEquipo ->
+            findNavController().navigate(EquiposFragmentDirections.showDetalleEquipo(idEquipo))
+
         }
 
         // Observar el estado de carga
@@ -73,11 +76,20 @@ class EquiposFragment : Fragment() {
             }
         }
 
+//        // Observar los datos
+//        viewLifecycleOwner.lifecycleScope.launch {
+//            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+//                equiposViewModel.equipos.collect { listaEquipos ->
+//                    (binding.rvEquipos.adapter as EquiposListAdapter).submitList(listaEquipos)
+//                }
+//            }
+//        }
+
         // Observar los datos
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 equiposViewModel.equipos.collect { listaEquipos ->
-                    (binding.rvEquipos.adapter as EquiposListAdapter).submitList(listaEquipos)
+                    (binding.rvEquipos.adapter as EquiposAdapter).updateList(listaEquipos)
                 }
             }
         }
