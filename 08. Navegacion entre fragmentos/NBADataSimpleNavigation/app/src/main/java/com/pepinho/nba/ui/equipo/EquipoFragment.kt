@@ -102,6 +102,7 @@ class EquipoFragment : Fragment(){
                     binding.tvNombre.text = it.nombre
                     binding.tvNombreCompleto.text = it.nombreCompleto
                     binding.tvCiudad.text = it.ciudad
+                    binding.tvDivision.text = "División: ${it.division.name}"
 
 //                    val resourceId = equipoIconMap[it.abreviatura.lowercase()] ?: R.drawable.nba
 //                    binding.ivEscudo.setImageResource(resourceId)

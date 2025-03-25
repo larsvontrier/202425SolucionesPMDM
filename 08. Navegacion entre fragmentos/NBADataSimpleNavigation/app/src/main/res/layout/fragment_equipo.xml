@@ -128,6 +128,18 @@
                 app:layout_constraintTop_toBottomOf="@id/tvNombreCompleto"
                 tools:text="Oklahoma City" />
 
+            <TextView
+                android:id="@+id/tvDivision"
+                style="@style/estiloDatoDetalle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCiudad"
+                tools:text="PACIFIC" />
+
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/swFavorito"
                 style="@style/estiloDatoDetalle"
@@ -136,7 +148,7 @@
                 android:checked="false"
                 android:text="@string/txtFavorito"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvCiudad" />
+                app:layout_constraintTop_toBottomOf="@id/tvDivision" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

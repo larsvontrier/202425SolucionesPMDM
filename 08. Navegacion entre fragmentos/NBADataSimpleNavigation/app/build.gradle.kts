@@ -75,6 +75,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx.v287)
 // https://mvnrepository.com/artifact/androidx.navigation/navigation-ui-ktx
     implementation(libs.androidx.navigation.ui.ktx.v287)
+    implementation(libs.androidx.legacy.support.v4)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
