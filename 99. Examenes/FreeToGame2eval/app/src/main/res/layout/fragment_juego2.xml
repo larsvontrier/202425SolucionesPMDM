@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- ImageView para la miniatura -->
+            <ImageView
+                android:id="@+id/miniaturaImageView"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Descripción de la miniatura"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tituloTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <!-- Título del Juego -->
+            <TextView
+                android:id="@+id/tituloTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Título del Juego"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/miniaturaImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="The Legend of Zelda: Breath of the Wild" />
+
+            <!-- Género y Plataforma -->
+            <TextView
+                android:id="@+id/generoTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Género: "
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tituloTextView"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Género: Aventura" />
+
+            <TextView
+                android:id="@+id/plataformaTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Plataforma: "
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/generoTextView"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Plataforma: Nintendo Switch" />
+
+            <!-- Fecha y Desarrollador -->
+            <TextView
+                android:id="@+id/fechaTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Fecha: "
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/plataformaTextView"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Fecha: 2023-10-01" />
+
+            <TextView
+                android:id="@+id/desarrolladorTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Desarrollador: "
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/fechaTextView"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Desarrollador: Nintendo" />
+
+            <!-- ScrollView para la descripción -->
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintTop_toBottomOf="@id/desarrolladorTextView">
+
+                <!-- Descripción del Juego -->
+                <TextView
+                    android:id="@+id/descripcionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción: "
+                    android:textStyle="bold"
+                    tools:text="Descripción: Un épico juego de aventuras en un mundo abierto lleno de misterios y desafíos." />
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

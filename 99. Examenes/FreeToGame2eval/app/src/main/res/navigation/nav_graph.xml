@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/plataformaFragment">
+
+    <fragment
+        android:id="@+id/plataformaFragment"
+        android:name="com.pepinho.freetogame.ui.plataforma.PlataformaFragment"
+        android:label="Plataforma Fragment"
+        tools:layout="@layout/fragment_plataforma">
+        <action
+            android:id="@+id/show_juegos"
+            app:destination="@id/juegosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/juegosFragment"
+        android:name="com.pepinho.freetogame.ui.juegos.JuegosFragment"
+        android:label="Juegos Fragment"
+        tools:layout="@layout/fragment_juegos">
+        <argument
+            android:name="idPlataforma"
+            android:defaultValue="2"
+            app:argType="integer" />
+        <action
+            android:id="@+id/show_juego"
+            app:destination="@id/juegoFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/juegoFragment"
+        android:name="com.pepinho.freetogame.ui.juego.JuegoFragment"
+        android:label="Juego Fragment"
+        tools:layout="@layout/fragment_juego">
+        <argument
+            android:name="idJuego"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+</navigation>

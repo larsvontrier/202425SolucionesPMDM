@@ -1,0 +1,33 @@
+Expected:
+TableInfo{name='Juego',
+columns
+  ={descripcion=Column{name='descripcion', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'},
+    descripcion=Column{name='descripcion', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  fecha=Column{name='fecha', type='INTEGER', affinity='3', notNull=true, primaryKeyPosition=0, defaultValue='undefined'},
+ fecha=Column{name='fecha', type='INTEGER', affinity='3', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  editor=Column{name='editor', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'},
+  editor=Column{name='editor', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  estado=Column{name='estado', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'},
+  estado=Column{name='estado', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  desarrollador=Column{name='desarrollador', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'},
+  desarrollador=Column{name='desarrollador', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  descripcionCorta=Column{name='descripcionCorta', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  descripcionCorta=Column{name='descripcionCorta', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  idPlataforma=Column{name='idPlataforma', type='INTEGER', affinity='3', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  idPlataforma=Column{name='idPlataforma', type='INTEGER', affinity='3', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  idGenero=Column{name='idGenero', type='INTEGER', affinity='3', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  idGenero=Column{name='idGenero', type='INTEGER', affinity='3', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  titulo=Column{name='titulo', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'},
+  titulo=Column{name='titulo', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}}
+  idJuego=Column{name='idJuego', type='INTEGER', affinity='3', notNull=true, primaryKeyPosition=1, defaultValue='undefined'},
+  idJuego=Column{name='idJuego', type='INTEGER', affinity='3', notNull=true, primaryKeyPosition=1, defaultValue='undefined'}
+  miniatura=Column{name='miniatura', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'},
+  miniatura=Column{name='miniatura', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  url=Column{name='url', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}},
+  url=Column{name='url', type='TEXT', affinity='2', notNull=true, primaryKeyPosition=0, defaultValue='undefined'}
+  foreignKeys=[], indices=[]}
+  foreignKeys=[ForeignKey{referenceTable='Plataforma', onDelete='NO ACTION +', onUpdate='NO ACTION', columnNames=[idPlataforma], referenceColumnNames=[idPlataforma]}, ForeignKey{referenceTable='Genero', onDelete='NO ACTION +', onUpdate='NO ACTION', columnNames=[idGenero], referenceColumnNames=[idGenero]}], indices=[]}
+
+
+columns
+={, , , , , , , , , , , , foreignKeys=[ForeignKey{referenceTable='Plataforma', onDelete='NO ACTION +', onUpdate='NO ACTION', columnNames=[idPlataforma], referenceColumnNames=[idPlataforma]}, ForeignKey{referenceTable='Genero', onDelete='NO ACTION +', onUpdate='NO ACTION', columnNames=[idGenero], referenceColumnNames=[idGenero]}], indices=[]}
