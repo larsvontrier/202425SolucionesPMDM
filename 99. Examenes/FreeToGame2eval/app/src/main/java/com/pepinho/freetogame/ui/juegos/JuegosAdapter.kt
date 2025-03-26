@@ -12,9 +12,9 @@ import com.pepinho.freetogame.model.Juego
 
 
 class JuegosAdapter(
-    private var juegos: List<Juego>,
     private val onItemClickListener: (Int) -> Unit
 ) : RecyclerView.Adapter<JuegosAdapter.JuegoViewHolder>() {
+    private var juegos: List<Juego> = emptyList()
 
     class JuegoViewHolder(
         private val binding: ItemJuegoBinding,

@@ -52,13 +52,13 @@ class JuegosFragment : Fragment() {
         binding.rvJuegos.layoutManager = LinearLayoutManager(context)
 
 //        // Con RecyclerView.Adapter
-//        binding.rvJuegos.adapter = JuegosAdapter(emptyList()) {
+//        binding.rvJuegos.adapter = JuegosAdapter() {
 //                idJuego ->
 //            Log.d("JuegosFragment", "Juego seleccionado: $idJuego")
 //            findNavController().navigate(JuegosFragmentDirections.showJuego(idJuego))
 //        }
 
-        // Con ListAdapter
+//        // Con ListAdapter
         binding.rvJuegos.adapter = JuegosListAdapter {
                 idJuego ->
             Log.d("JuegosFragment", "Juego seleccionado: $idJuego")
