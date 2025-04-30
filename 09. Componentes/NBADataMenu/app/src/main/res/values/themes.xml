@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.NBAApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Color primario (azul NBA) -->
+        <item name="colorPrimary">@color/nba_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Surface (Fondos de componentes como Toolbar) -->
+        <item name="colorSurface">@color/nba_blue</item> <!-- Fondo de la Toolbar -->
+        <item name="colorOnSurface">@color/white</item> <!-- Texto/íconos -->
+
+        <!-- Surface Container (alternativo para cards, etc.) -->
+        <item name="colorSurfaceContainer">@color/nba_blue_light</item>
+        <item name="colorSurfaceContainerHigh">@color/nba_blue</item>
+
+        <!-- Acento (rojo NBA) -->
+        <item name="colorSecondaryContainer">@color/nba_red_light</item>
+        <item name="colorOnSecondaryContainer">@color/nba_red_dark</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/nba_blue_dark</item>
+        <item name="android:navigationBarColor">@color/nba_blue</item>
+
+        <!-- Overflow Menu Icon (⋮) -->
+        <item name="actionOverflowButtonStyle">@style/NBAOverflowButton</item>
+
+        <item name="actionMenuTextColor">@color/white</item>
+
+        <!-- Color íconos del menú (overflow, acciones) -->
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <!-- Estilo para menús desplegables -->
+    <style name="NBAPopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/nba_blue_dark</item>
+    </style>
+
+    <style name="NBAOverflowButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NBADataFragments" parent="Theme.Material3.DayNight">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/md_theme_primary</item>
+    </style>
+</resources>
+

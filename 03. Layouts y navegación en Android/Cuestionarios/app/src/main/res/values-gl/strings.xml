@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuestionTest</string>
+    <string name="question">Cal é o comportamento predeterminado das clases en Kotlin?</string>
+    <string name="answer1">Todas as clases son privadas</string>
+    <string name="answer2">Todas as clases son seladas</string>
+    <string name="answer3">Todas as clases son finais</string>
+    <string name="answer4">Todas as clases son protexidas</string>
+    <string name="comprobar">Comprobar</string>
+    <string name="limpiar">Limpar</string>
+    <string name="okMensaje">Resposta correcta</string>
+    <string name="errorMensaje">Resposta incorrecta</string>
+    <string name="next">Seguinte</string>
+    <string name="noQuestion">-</string>
+</resources>

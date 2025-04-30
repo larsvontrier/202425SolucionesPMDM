@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="esquinasRedondeadas">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5%</item>
+    </style>
+    <style name="estiloTarjetaAzul" parent="Widget.Material3.CardView.Filled">
+        <!-- Fondo de la tarjeta -->
+        <item name="cardBackgroundColor">@color/md_theme_secondaryContainer_mediumContrast</item>
+        <item name="android:padding">0dp</item>
+        <!-- Bordes redondeados -->
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.MediumComponent</item>
+        <item name="cardCornerRadius">12dp</item>
+        <!-- Elevación y sombra -->
+        <item name="cardElevation">8dp</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardMaxElevation">12dp</item>
+
+        <!-- Borde opcional (puedes omitirlo si no lo necesitas) -->
+        <item name="strokeColor">@color/md_theme_primaryContainer</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+    <style name="estiloTexto">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/md_theme_onSecondary_mediumContrast</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="estiloTextoPeque" parent="estiloTexto">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+</resources>

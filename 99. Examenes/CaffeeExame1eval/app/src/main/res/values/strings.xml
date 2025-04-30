@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Un café al día</string>
+    <string name="calculadora">Calorie Calculator</string>
+    <string name="tipoCafe">Calorías del tipo de café</string>
+    <string name="numeroTazas">Número de tazas</string>
+    <string name="sexo">Mujer</string>
+    <string name="calcular">Calcular</string>
+    <string name="valor_inicial_tazas">1</string>
+    <string name="quiero_otro">Quiero Otro</string>
+    <string name="imaxe_do_cafe">Imaxe do café</string>
+    <string name="categorias">Categorías</string>
+</resources>

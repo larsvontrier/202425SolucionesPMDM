@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ContadorViewModel</string>
+    <string name="text_incrementar">+</string>
+    <string name="text_decrementar">-</string>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NBA Data Fragments</string>
+    <string name="txtHintNombre">Introduce el nombre del equipo</string>
+    <string name="tvNombreEquipo">Nombre equipo</string>
+    <string name="tvDetalles">Detalles</string>
+    <string name="txtCbFavorito">Favorito</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_nombre_equipo">Nombre</string>
+    <string name="txt_nombre_ciudad">Ciudad</string>
+    <string name="txtFavorito">Favorito</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuestionTest</string>
+    <string name="question">What is the default behavior of classes in Kotlin?</string>
+    <string name="answer1">All classes are private</string>
+    <string name="answer2">All classes are sealed</string>
+    <string name="answer3">All classes are final</string>
+    <string name="answer4">All classes are protected</string>
+    <string name="comprobar">Check</string>
+    <string name="limpiar">Reset</string>
+    <string name="okMensaje">Correct!</string>
+    <string name="errorMensaje">Incorrect!</string>
+    <string name="next">Next</string>
+    <string name="noQuestion">-</string>
+</resources>

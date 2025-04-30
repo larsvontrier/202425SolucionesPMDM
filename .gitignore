@@ -1,0 +1,36 @@
+# Ignorar directorios de compilación
+**/build/
+**/.gradle/
+
+# Ignorar archivos de configuración de Android Studio
+**/.idea/
+**/.vscode/
+**/*.iml
+
+# Ignorar archivos de configuración de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos de compilación de Java
+*.class
+
+# Ignorar archivos de configuración de Gradle
+gradle-app.setting
+gradle-wrapper.jar
+gradle-wrapper.properties
+gradlew
+gradlew.bat
+
+# Ignorar archivos de configuración de Maven
+**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Ignorar archivos de configuración de Kotlin
+**/out/

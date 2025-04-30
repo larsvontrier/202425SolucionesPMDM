@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/estiloTarjetaAzul"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- ImageView para la miniatura -->
+            <ImageView
+                android:id="@+id/miniaturaImageView"
+                android:layout_width="365dp"
+                android:layout_height="206dp"
+                android:contentDescription="@string/txt_miniatura_description"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/thumbnail" />
+
+            <!-- Título del Juego -->
+            <TextView
+                android:id="@+id/tituloTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="8dp"
+                style="@style/estiloTexto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/miniaturaImageView"
+                tools:text="The Legend of Zelda: Breath of the Wild" />
+
+            <!-- Género y Plataforma -->
+            <TextView
+                android:id="@+id/generoTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/estiloTextoPeque"
+                app:layout_constraintTop_toBottomOf="@id/tituloTextView"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Género: Aventura" />
+
+            <TextView
+                android:id="@+id/plataformaTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/estiloTextoPeque"
+                app:layout_constraintTop_toBottomOf="@id/generoTextView"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Plataforma: Nintendo Switch" />
+
+            <!-- Fecha y Desarrollador -->
+            <TextView
+                android:id="@+id/fechaTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/estiloTextoPeque"
+                app:layout_constraintTop_toBottomOf="@id/plataformaTextView"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Fecha: 2023-10-01" />
+
+            <TextView
+                android:id="@+id/desarrolladorTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/estiloTextoPeque"
+                app:layout_constraintTop_toBottomOf="@id/fechaTextView"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Desarrollador: Nintendo" />
+
+            <TextView
+                android:id="@+id/urlTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="URL: "
+                style="@style/estiloTextoPeque"
+                app:layout_constraintTop_toBottomOf="@id/desarrolladorTextView"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="https://manuais.pages.iessanclemente.net/plantillas/dam/pmdmd/index.html" />
+
+            <!-- ScrollView para la descripción -->
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tituloTextView"
+                app:layout_constraintTop_toBottomOf="@id/urlTextView">
+
+                <!-- Descripción del Juego -->
+                <TextView
+                    android:id="@+id/descripcionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción: "
+                    android:maxLines="50"
+                    android:maxLength="900"
+                    style="@style/estiloTextoPeque"
+                    android:ellipsize="end"
+                    tools:text="Descripción: Un épico juego de aventuras en un mundo abierto lleno de misterios y desafíos." />
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

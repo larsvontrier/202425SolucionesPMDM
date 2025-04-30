@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="esquinasRedondeadas">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5%</item>
+    </style>
+    <style name="estiloCard" parent="Widget.Material3.CardView.Filled">
+        <!-- Fondo de la tarjeta -->
+        <item name="cardBackgroundColor">@color/nba_blue_light</item>
+
+        <!-- Bordes redondeados -->
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.MediumComponent</item>
+
+        <!-- Elevación y sombra -->
+        <item name="cardElevation">8dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardMaxElevation">12dp</item>
+
+        <!-- Borde opcional (puedes omitirlo si no lo necesitas) -->
+        <item name="strokeColor">@color/nba_red</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+    <style name="estiloDato">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/roboto_flex</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="Text.Title" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">@font/roboto_flex</item>
+    </style>
+
+    <style name="estiloDatoDetalle" parent="estiloDato">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+</resources>

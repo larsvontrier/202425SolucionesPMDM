@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FreeToGame</string>
+    <string name="txt_miniatura_description">Imagen del juego</string>
+    <string name="free_to_game_title">Free to game</string>
+    <string name="juegos_para_windows">Juegos para Windows</string>
+    <string name="juegos_para_navegador">Juegos para Navegador</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EjercicioToolbar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="saludo">¡Bienvenido %s!</string>
+    <string name="escribe_tu_nombre">Escribe tu nombre</string>
+    <string name="enviar">Enviar</string>
+</resources>

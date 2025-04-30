@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/equiposFragment">
+
+    <fragment
+        android:id="@+id/equiposFragment"
+        android:name="com.pepinho.nba.ui.equipos.EquiposFragment"
+        android:label="Lista de equipos"
+        tools:layout="@layout/fragment_equipos">
+        <action
+            android:id="@+id/show_detalle_equipo"
+            app:destination="@id/equipoFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/equipoFragment"
+        android:name="com.pepinho.nba.ui.equipo.EquipoFragment"
+        android:label="Detalle equipo"
+        tools:layout="@layout/fragment_equipo">
+        <argument
+            android:name="idEquipo"
+            app:argType="integer" />
+    </fragment>
+</navigation>
