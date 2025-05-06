@@ -13,6 +13,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -29,23 +32,25 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.example.marsphotos.R
-import com.pepinho.fotogrid.model.MarsPhoto
+import com.pepinho.fotogrid.R
+import com.pepinho.fotogrid.model.PicsumPhoto
+import com.pepinho.fotogrid.ui.PicsumUiState
 import com.pepinho.fotogrid.ui.theme.FotoGridTheme
 
 @Composable
-fun HomeScreen(
-    marsUiState: MarsUiState,
-    retryAction: () -> Unit,
+fun InicioScreen(
+    picsumUiState: PicsumUiState,
+    accionReintento: () -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
-    when (marsUiState) {
-        is MarsUiState.Loading -> LoadingScreen(modifier = modifier.fillMaxSize())
-        is MarsUiState.Success -> PhotosGridScreen(
-            marsUiState.photos, contentPadding = contentPadding, modifier = modifier.fillMaxWidth()
+    when (picsumUiState) {
+        is PicsumUiState.Loading -> CargandoScreen(modifier = modifier.fillMaxSize())
+        is PicsumUiState.Success -> FotoGridScreenEscalonada(
+//        is PicsumUiState.Success -> FotoGridScreen(
+            picsumUiState.photos, contentPadding = contentPadding, modifier = modifier.fillMaxWidth()
         )
-        is MarsUiState.Error -> ErrorScreen(retryAction, modifier = modifier.fillMaxSize())
+        is PicsumUiState.Error -> ErroScreen(accionReintento, modifier = modifier.fillMaxSize())
     }
 }
 
@@ -53,11 +58,11 @@ fun HomeScreen(
  * La pantalla de inicio muestra el mensaje de carga.
  */
 @Composable
-fun LoadingScreen(modifier: Modifier = Modifier) {
+fun CargandoScreen(modifier: Modifier = Modifier) {
     Image(
         modifier = modifier.size(200.dp),
         painter = painterResource(R.drawable.loading_img),
-        contentDescription = stringResource(R.string.loading)
+        contentDescription = stringResource(R.string.cargando)
     )
 }
 
@@ -65,7 +70,7 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
  * La pantalla de inicio muestra el mensaje de error con el botón de reintento.
  */
 @Composable
-fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
+fun ErroScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.Center,
@@ -74,9 +79,9 @@ fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
         Image(
             painter = painterResource(id = R.drawable.ic_connection_error), contentDescription = ""
         )
-        Text(text = stringResource(R.string.loading_failed), modifier = Modifier.padding(16.dp))
+        Text(text = stringResource(R.string.erro_carga), modifier = Modifier.padding(16.dp))
         Button(onClick = retryAction) {
-            Text(stringResource(R.string.retry))
+            Text(stringResource(R.string.reintentar))
         }
     }
 }
@@ -85,8 +90,8 @@ fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
  * La pantalla de inicio muestra el grid de fotos.
  */
 @Composable
-fun PhotosGridScreen(
-    photos: List<MarsPhoto>,
+fun FotoGridScreen(
+    fotos: List<PicsumPhoto>,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
@@ -95,9 +100,9 @@ fun PhotosGridScreen(
         modifier = modifier.padding(horizontal = 4.dp),
         contentPadding = contentPadding,
     ) {
-        items(items = photos, key = { photo -> photo.id }) { photo ->
-            MarsPhotoCard(
-                photo,
+        items(items = fotos, key = { foto -> foto.id }) { foto ->
+            CardFoto(
+                foto,
                 modifier = Modifier
                     .padding(4.dp)
                     .fillMaxWidth()
@@ -107,19 +112,55 @@ fun PhotosGridScreen(
     }
 }
 
+
+/**
+ * La pantalla de inicio muestra el grid de fotos.
+ */
 @Composable
-fun MarsPhotoCard(photo: MarsPhoto, modifier: Modifier = Modifier) {
+fun FotoGridScreenEscalonada(
+    fotos: List<PicsumPhoto>,
+    modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(0.dp),
+) {
+    LazyVerticalStaggeredGrid(
+        columns = StaggeredGridCells.Adaptive(100.dp), // Número de columnas adaptativas. Quedarán unas 3 columnas
+        verticalItemSpacing = 8.dp,
+        modifier = modifier.padding(horizontal = 4.dp),
+        contentPadding = contentPadding,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        items(items = fotos, key = { foto -> foto.id }) { foto ->
+            CardFoto(
+                foto,
+                modifier = Modifier
+                    .padding(4.dp)
+                    .fillMaxWidth() // Permite que el ancho sea adaptable
+//                    .aspectRatio(1.5f) //  Este modificador fuerza a que cada
+            //                    elemento tenga una relación de aspecto fija
+            //                    (en este caso, 1.5:1), lo que hace que todos los
+            //                    elementos tengan la misma altura independientemente
+            //                    de su contenido
+            )
+        }
+    }
+}
+
+
+
+
+@Composable
+fun CardFoto(foto: PicsumPhoto, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier,
         shape = MaterialTheme.shapes.medium,
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
-        AsyncImage(
-            model = ImageRequest.Builder(context = LocalContext.current).data(photo.imgSrc)
+        AsyncImage( // Coil disponible en la librería de Compose
+            model = ImageRequest.Builder(context = LocalContext.current).data(foto.url)
                 .crossfade(true).build(),
-            error = painterResource(R.drawable.ic_broken_image),
-            placeholder = painterResource(R.drawable.loading_img),
-            contentDescription = stringResource(R.string.mars_photo),
+            error = painterResource(R.drawable.ic_broken_image), // Imagen de error
+            placeholder = painterResource(R.drawable.loading_img), // Mientras carga
+            contentDescription = stringResource(R.string.descripcion_foto),
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxWidth()
         )
@@ -128,25 +169,26 @@ fun MarsPhotoCard(photo: MarsPhoto, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun LoadingScreenPreview() {
+fun CargandoScreenPreview() {
     FotoGridTheme {
-        LoadingScreen()
+        CargandoScreen()
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun ErrorScreenPreview() {
+fun ErroScreenPreview() {
     FotoGridTheme {
-        ErrorScreen({})
+        ErroScreen({})
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun PhotosGridScreenPreview() {
+fun FotoGridScreenPreview() {
     FotoGridTheme {
-        val mockData = List(10) { MarsPhoto("$it", "") }
-        PhotosGridScreen(mockData)
+        val mockData = List(10) { PicsumPhoto("$it", "", "",
+            width = 100, height = 100) }
+        FotoGridScreen(mockData)
     }
 }

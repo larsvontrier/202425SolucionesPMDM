@@ -1,5 +1,5 @@
 
-package com.pepinho.fotogrid.network
+package com.pepinho.fotogrid.retrofit
 
 import com.pepinho.fotogrid.model.PicsumPhoto
 import retrofit2.http.GET

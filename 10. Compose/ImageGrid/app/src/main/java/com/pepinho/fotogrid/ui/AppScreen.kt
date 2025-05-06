@@ -16,25 +16,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.marsphotos.R
-import com.pepinho.fotogrid.ui.screens.HomeScreen
-import com.pepinho.fotogrid.ui.screens.MarsViewModel
+import com.pepinho.fotogrid.R
+import com.pepinho.fotogrid.ui.screens.InicioScreen
 
 @Composable
-fun MarsPhotosApp() {
+fun AppScreen() {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = { MarsTopAppBar(scrollBehavior = scrollBehavior) }
+        topBar = { FotoTopAppBar(scrollBehavior = scrollBehavior) }
     ) {
         Surface(
             modifier = Modifier.fillMaxSize()
         ) {
-            val marsViewModel: MarsViewModel =
-                viewModel(factory = MarsViewModel.Factory)
-            HomeScreen(
-                marsUiState = marsViewModel.marsUiState,
-                retryAction = marsViewModel::getMarsPhotos,
+            val viewModel: FotoGridViewModel =
+                viewModel(factory = FotoGridViewModel.Factory)
+            InicioScreen(
+                picsumUiState = viewModel.picsumUiState,
+                accionReintento = viewModel::getFotos,
                 contentPadding = it
             )
         }
@@ -42,13 +41,13 @@ fun MarsPhotosApp() {
 }
 
 @Composable
-fun MarsTopAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier) {
+fun FotoTopAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier) {
     CenterAlignedTopAppBar(
         scrollBehavior = scrollBehavior,
         title = {
             Text(
                 text = stringResource(R.string.app_name),
-                style = MaterialTheme.typography.headlineSmall,
+                style = MaterialTheme.typography.titleMedium,
             )
         },
         modifier = modifier

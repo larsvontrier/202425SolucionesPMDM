@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -41,44 +42,55 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
+
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
+
+    // Compose Bom
     implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.material3)
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.core.ktx)
+    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-compose
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-test
+    testImplementation(libs.kotlinx.coroutines.test)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-compose
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    // Retrofit y converter Gson
+
+
+    // Retrofit y JSON, Coil
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
-    implementation(libs.retrofit)
-    // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
-    implementation(libs.converter.gson)
-    // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-moshi
-    implementation(libs.converter.moshi)
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("io.coil-kt:coil-compose:2.7.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
     implementation(libs.okhttp)
+    implementation(libs.kotlinx.serialization.json)
+
+
     // Coroutines
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
     implementation(libs.kotlinx.coroutines.core)
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-android
-    runtimeOnly(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.android)
     // Moshi para Retrofit
     // https://mvnrepository.com/artifact/com.squareup.moshi/moshi
-    implementation(libs.moshi)
-    // Coil para cargar imágenes
-    // https://mvnrepository.com/artifact/io.coil-kt/coil
-    implementation(libs.coil)
+//    implementation(libs.moshi)
+
+
+
 
 }

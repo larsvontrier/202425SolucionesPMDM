@@ -1,8 +1,6 @@
-package com.pepinho.pmdm.applistas.api
+package com.pepinho.pmdm.applistas.model
 
-import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.JsonIgnoreUnknownKeys
 
 /**
  * {

@@ -2,16 +2,25 @@
 package com.pepinho.fotogrid
 
 import android.app.Application
-import com.pepinho.fotogrid.data.AppContainer
-import com.pepinho.fotogrid.data.DefaultAppContainer
+import com.pepinho.fotogrid.data.dependencies.AppInyectorContainer
+import com.pepinho.fotogrid.data.dependencies.AppInyectorContainerImpl
 
-class MarsPhotosApplication : Application() {
+class FotoGridApplication : Application() {
     /**
-     * La instancia de AppContainer es utilizada por el resto de las clases para obtener dependencias
+     * La instancia de AppInyectorContainer es utilizada por el resto de las clases para
+     * obtener dependencias
      * */
-    lateinit var container: AppContainer
+    lateinit var contenedor: AppInyectorContainer
+        private set // Solo se puede modificar desde esta clase
+
+    /**
+     * Inicializa el contenedor de inyección de dependencias.
+     * Se llama al crear la aplicación y está disponible para el resto de las clases.
+     * A partir de aquí se puede usar el contenedor para obtener las dependencias necesarias para
+     * acceder a la API de fotos.
+     */
     override fun onCreate() {
         super.onCreate()
-        container = DefaultAppContainer()
+        contenedor = AppInyectorContainerImpl()
     }
 }

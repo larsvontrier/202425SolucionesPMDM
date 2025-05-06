@@ -1,4 +1,4 @@
-package com.pepinho.pmdm.applistas.data
+package com.pepinho.pmdm.applistas.data.repository
 
 import com.pepinho.pmdm.applistas.model.PokemonResponse
 

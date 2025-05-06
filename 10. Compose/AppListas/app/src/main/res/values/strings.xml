@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AppListas</string>
+    <string name="erro">Erro de carga</string>
+    <string name="reintentar">Reintentar</string>
 </resources>

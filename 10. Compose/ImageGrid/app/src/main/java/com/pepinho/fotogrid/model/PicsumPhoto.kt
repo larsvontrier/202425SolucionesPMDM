@@ -1,7 +1,9 @@
-package com.example.marsphotos.model
+package com.pepinho.fotogrid.model
 
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.json.JsonIgnoreUnknownKeys
 
 /**
  *    "id": "102",
@@ -12,6 +14,8 @@ import kotlinx.serialization.SerialName
  *     "download_url": "https://picsum.photos/id/102/4320/3240"
  *   }
  */
+@OptIn(ExperimentalSerializationApi::class)
+@JsonIgnoreUnknownKeys // Ignora las claves desconocidas en el JSON
 @Serializable
 data class PicsumPhoto (
     val id: String,

@@ -1,4 +1,4 @@
-package com.pepinho.pmdm.applistas.data
+package com.pepinho.pmdm.applistas.data.api
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.pepinho.pmdm.applistas.model.PokemonResponse
@@ -15,18 +15,18 @@ interface PokemonApi {
         @Query("offset") offset: Int = 200
     ): PokemonResponse
 
-    companion object {
-        private const val baseUrl = "https://pokeapi.co/"
-
-        fun getInstance(): PokemonApi {
-            val contentType = "application/json".toMediaType()
-            val json = Json { ignoreUnknownKeys = true }
-
-            return Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .addConverterFactory(json.asConverterFactory(contentType))
-                .build()
-                .create(PokemonApi::class.java)
-        }
-    }
+//    companion object {
+//        private const val baseUrl = "https://pokeapi.co/"
+//
+//        fun getInstance(): PokemonApi {
+//            val contentType = "application/json".toMediaType()
+//            val json = Json { ignoreUnknownKeys = true }
+//
+//            return Retrofit.Builder()
+//                .baseUrl(baseUrl)
+//                .addConverterFactory(json.asConverterFactory(contentType))
+//                .build()
+//                .create(PokemonApi::class.java)
+//        }
+//    }
 }

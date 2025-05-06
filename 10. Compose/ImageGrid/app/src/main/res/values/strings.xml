@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Grid de fotos con Retrofit</string>
+    <string name="erro_carga">Erro ó cargar</string>
+    <string name="reintentar">Reintentar</string>
+    <string name="cargando">Cargando</string>
+    <string name="descripcion_foto">Fotografía</string>
+</resources>
