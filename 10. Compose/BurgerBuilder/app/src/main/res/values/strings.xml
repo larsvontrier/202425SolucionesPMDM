@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Burger Builder</string>
+    <string name="pedido_button">Realizar pedido (%1$s)</string>
+
+    <string name="posicion_non">Non</string>
+    <string name="posicion_enriba">Enriba</string>
+    <string name="posicion_abaixo">Abaixo</string>
+    <string name="posición_ambos">Enriba e abaixo</string>
+
+    <string name="mensaxe_posicion">Onde queres por o recheo?</string>
+    <string name="mensaxe_engadido">Recheo engadido!</string>
+
+
+
+    <string name="recheo_leituga">Leituga</string>
+    <string name="recheo_tomate">Tomate</string>
+    <string name="recheo_ketchup">Ketchup</string>
+    <string name="recheo_maionesa">Maionesa</string>
+    <string name="recheo_mostaza">Mostaza</string>
+    <string name="recheo_queixo">Queixo</string>
+    <string name="recheo_cogombro">Cogombrinho</string>
+    <string name="recheo_toucinho">Touciño</string>
+    <string name="recheo_cebola">Cebola</string>
+
+    <string name="previsualizacion">Previsualizacion Burger</string>
+
+
+</resources>
