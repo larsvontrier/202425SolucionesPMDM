@@ -17,4 +17,3 @@ data class Cafe(
         return "Cafe(idCafe=$idCafe, idCategoria=$idCategoria, nombre='$nombre', tipo='$tipo', calorias=$calorias, descripcion=$descripcion, foto=${foto?.contentToString()})"
     }
 }
-

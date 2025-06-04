@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cafesFragment">
+
+    <fragment
+        android:id="@+id/cafesFragment"
+        android:name="com.pepinho.freetogame.ui.juegos.CafesFragment"
+        android:label="CafesFragment" >
+        <action
+            android:id="@+id/showCafe"
+            app:destination="@id/cafeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cafeFragment"
+        android:name="com.pepinho.pmdm.exames.ui.cafe.CafeFragment"
+        android:label="CafeFragment" >
+        <argument
+            android:name="idCafe"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
